@@ -43,3 +43,7 @@ gem "pg", "~> 1.5"
 gem "groupdate", "~> 6.3"
 
 gem "aws-sdk-s3", "~> 1.132"
+
+gem "concurrent-ruby", "~> 1.3"
+
+gem "aws-partitions", "~> 1.940"
