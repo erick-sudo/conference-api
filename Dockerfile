@@ -8,7 +8,7 @@ WORKDIR /app
 COPY Gemfile /app/Gemfile
 
 # Install dependencies
-RUN gem install bundler && bundle install --jobs 4 --retry
+RUN gem install bundler && bundle install --jobs 4 --retry 3
 
 # Copy the rest of the Rails application files to the container
 COPY . .
