@@ -68,6 +68,7 @@ Rails.application.configure do
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   config.hosts = [
+    "conference-api-prc0.onrender.com",
     "conference-front-beta.vercel.app"
   ]
 
