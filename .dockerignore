@@ -1,17 +1,31 @@
-# Exclude specific directories
-storage/
-public/
-tmp/
-test/
-log/
-vendor/
+# See https://docs.docker.com/engine/reference/builder/#dockerignore-file for more about ignoring files.
 
-# Exclude specific files
+# Ignore git directory.
+/.git/
 
+# Ignore bundler config.
+/.bundle
 
-# Exclude files with a specific extension
-*.log
-*.tmp
+# Ignore all environment files (except templates).
+/.env*
+!/.env*.erb
 
-# Exclude all files and directories starting with "temp"
-temp*/
+# Ignore all default key files.
+/config/master.key
+/config/credentials/*.key
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/.keep
+
+# Ignore storage (uploaded files in development and any SQLite databases).
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/.keep

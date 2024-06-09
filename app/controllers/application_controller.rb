@@ -5,6 +5,11 @@ class ApplicationController < ActionController::API
     rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_response
 
     before_action :authenticate
+    skip_before_action :authenticate, only: [ :index ]
+
+    def index
+        render json: { "home": "Welcome to Conference hub" }
+    end
 
     def authenticate
         # Decode and verify JWT token from the 'jwt' cookie

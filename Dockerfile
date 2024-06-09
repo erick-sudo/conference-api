@@ -1,5 +1,8 @@
-# Pull the latest ruby image
-FROM ruby:3.3.0
+# syntax = docker/dockerfile:1
+
+# Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
+ARG RUBY_VERSION=3.3.0
+FROM ruby:$RUBY_VERSION as base
 
 # Set the working directory
 WORKDIR /app
@@ -17,8 +20,9 @@ COPY . .
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
 
-# Set the entrypoint to the custom script
+# Entrypoint prepares the database.
 ENTRYPOINT ["entrypoint.sh"]
 
-# Start the application
-CMD ["rails", "s", "-b", "0.0.0.0", "-p", "4000"]
+# Start the server by default, this can be overwritten at runtime
+EXPOSE 3000
+CMD ["rails", "s", "-b", "0.0.0.0", "-p", "3000"]

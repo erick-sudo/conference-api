@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins [ "http://localhost:5173", "http://localhost:3000", "http://ec2-18-208-140-121.compute-1.amazonaws.com:80", "http://ec2-18-208-140-121.compute-1.amazonaws.com:4000", "https://deploy-preview-17--confrence-tracking.netlify.app", "https://conference-front.vercel.app" ]
+    origins [ "https://conference-front-beta.vercel.app" ]
 
     resource "*",
       headers: :any,

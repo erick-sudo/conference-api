@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :users
   resources :conferences
 
+  root "application#index"
+
   get '/media/poster/:id/download', to: 'conferences#serve_poster', as: 'conference_poster'
   get '/media/files/:id/:attachment_id', to: 'conferences#serve_file_attachment', as: 'conference_file_attachment'
 

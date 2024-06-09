@@ -15,7 +15,7 @@
 bundle exec rails db:migrate
 
 # Run database seeding (if needed)
-bundle exec rails db:seed
+# bundle exec rails db:seed
 
 # Execute the command received as arguments to the entrypoint script
 exec "$@"
