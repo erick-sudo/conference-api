@@ -10,17 +10,11 @@ default: &default
   timeout: 20000
   database: db/db.sqlite3
 
-# development:
-#   adapter: sqlite3
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 20 } %>
-#   timeout: 20000
-#   database: db/db.sqlite3
-
 development:
-  <<: *default
-  adapter: postgresql
-  encoding: unicode
-  url: <%= ENV['DATABASE_URL'] %>
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 20 } %>
+  timeout: 20000
+  database: db/development.sqlite3
 
 test:
   <<: *default
